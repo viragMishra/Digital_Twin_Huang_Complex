@@ -5,6 +5,7 @@
 \usepackage[round,authoryear]{natbib}
 \usepackage{hyperref}
 \usepackage{doi}
+\usepackage{enumitem}
 
 \newcommand{\figref}[1]{Fig.~\ref{#1}}
 
@@ -15,7 +16,7 @@
 \begin{document}
 \maketitle{}
 
-\section{Abstract}
+\section*{Abstract}
 This project aims to develop a data-assimilative digital twin framework for wave energy converter (WEC) operation by integrating physics-based hydrodynamic models with PacWave field measurements, experimental data from multiple WEC devices (subWEC, LUPA, FOSSWEC) tested at the Hinsdale Wave Research Laboratory, and PTO control-system data from the WESURF laboratory. Leveraging existing computational workflows, calibrate and validate numerical models and the requested computing resources, the project will assimilate measurements to update model states and parameters and quantify predictive uncertainty.
 Key outputs will include WEC motion and PTO response estimates, power-production predictions and model-performance diagnostics. The framework will establish a computational foundation for improved WEC performance assessment, predictive operation and future control optimization under realistic ocean conditions.
 \section{Project Overview and Research Opportunity}
@@ -38,12 +39,22 @@ For physical PTO testing,~\cite{Bracco2015ISWECHIL} coupled an ISWEC gyroscope a
 The proposed project will build on these approaches by developing a reusable workflow that explicitly assimilates laboratory measurements to update model estimates and assess prediction uncertainty across the hydrodynamic and PTO testing stages.
 
 \section{Research Objectives and Expected Outcomes}
+The project has five linked objectives. 
+\begin{enumerate}[noitemsep]
+    \item Identify the representative wave conditions derived from PacWave measurements.
+    \item Organize the existing tank-testing and PTO (Pneumatic) datasets into a documented structure that preserves device geometry, scale, instrumentation, wave conditions and PTO settings.
+    \item Identify the most appropriate numerical models (WEC-Sim, CFD) that reproduce selected laboratory experiments and validate their predictions against independent datasets. 
+    \item Develop and evaluate a data-assimilation method that uses measured device response to update estimated states and selected model parameters. 
+    \item Integrate the resulting hydrodynamic model with WESURF’s physical PTO testing capabilities and evaluate the coupled response. 
+\end{enumerate}
+Expected outcomes include a curated dataset inventory, validated baseline and updated models, a documented coupled simulation and testing workflow and an assessment of prediction accuracy and uncertainty. Success will be demonstrated through reproducible comparisons of device motion, PTO displacement or velocity, measured connection loads and power metrics.
+
 \section{Research Approach: Connecting Field, Tank, and PTO Data}
 \section{Computational Readiness and Resource Requirements}
 \section{Work Plan, Milestones, and Validation}
 \section{Impact Readiness and Pathway to External Funding}
 
-\nocite{*}
+% \nocite{*}
 \bibliographystyle{plainnat}
 \bibliography{references}
 
