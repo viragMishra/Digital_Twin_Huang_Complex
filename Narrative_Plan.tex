@@ -1,0 +1,50 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{url}
+\usepackage[round,authoryear]{natbib}
+\usepackage{hyperref}
+\usepackage{doi}
+
+\newcommand{\figref}[1]{Fig.~\ref{#1}}
+
+\title{Development of a Data-Assimilative Digital Twin for Wave Energy Converters Using Field, Laboratory and Numerical Data}
+
+\date{}
+
+\begin{document}
+\maketitle{}
+
+\section{Abstract}
+This project aims to develop a data-assimilative digital twin framework for wave energy converter (WEC) operation by integrating physics-based hydrodynamic models with PacWave field measurements, experimental data from multiple WEC devices (subWEC, LUPA, FOSSWEC) tested at the Hinsdale Wave Research Laboratory, and PTO control-system data from the WESURF laboratory. Leveraging existing computational workflows, calibrate and validate numerical models and the requested computing resources, the project will assimilate measurements to update model states and parameters and quantify predictive uncertainty.
+Key outputs will include WEC motion and PTO response estimates, power-production predictions and model-performance diagnostics. The framework will establish a computational foundation for improved WEC performance assessment, predictive operation and future control optimization under realistic ocean conditions.
+\section{Project Overview and Research Opportunity}
+This project proposes to develop a data-assimilative digital twin for wave energy converters (WECs) that connect ocean wave measurements, laboratory experiments and numerical simulations to predict device response and power conversion across scales. The framework shown in~\figref{flowchart} will combine full-scale wave data from PacWave, scaled WEC hydrodynamic experiments at Oregon State University’s O.H. Hinsdale Wave Research Laboratory and power take-off (PTO) bench experiments at WESURF to create a comprehensive model of WEC behavior. Measured wave conditions from PacWave will be scaled to laboratory conditions and used as inputs to physics-based WEC models to predict device motions and hydrodynamic forces. Measurements from Hinsdale wave-tank experiments and WESURF PTO tests will then be combined with the numerical predictions through data assimilation to improve estimates of device response, calibrate selected model parameters and assess prediction uncertainty. Building on existing numerical tools and WESURF’s force/position driven and coupled testing capabilities, the project will establish and validate a generalized, reusable workflow linking tank testing, hydrodynamic simulation with physical PTO testing. The resulting framework will support assessment of loads on devices, dynamics and power output under representative ocean conditions. This workflow will provide a foundation for future integration of operational measurements from deployed devices.
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=1\textwidth]{flowChart.png}
+    \caption{Framework for the proposed data-assimilative digital twin for wave energy converters.}
+    \label{flowchart}
+\end{figure}
+\section{Previous Research and Integration Gap}
+Digital twins are virtual representations of physical systems that can be used to simulate and optimize their behavior. The development of digital twins for wave energy converters (WECs) has gained significant attention in recent years due to the increasing need for accurate and reliable prediction of device performance under real-world conditions. A digital twin can help in understanding the complex interactions between the ocean environment, the WEC itself, and its control systems. This understanding is crucial for improving the design, operation and maintenance of WECs.
+
+In a digital twin framework experimental data is used to calibrate and validate numerical models, which can then be used to predict the behavior of the physical system under different conditions.
+PacWave~\cite{pacwave2026} wave resource data was characterized by~\cite{Dunkle2020PacWave} and~\cite{Robertson2022WECSize} examined how spectral conditions at PacWave and other sites influence device-size-dependent energy production and variability.~At field scale, Okushemiya et al. (2026) combined deployment measurements with PTO dynamometer data to improve modelling of a tethered-heave-plate WEC, incorporating generator inertia and measured power-conversion behaviour.~\cite{Ali2025SurgePitch, ali_subharmonic_2026}~in several tank-testing campaigns at OSU investigated the behavior of submerged-WEC's under various conditions.~Nonlinear surge–pitch coupling and subharmonic excitation was investigated respectively in these studies, highlighting the importance of considering nonlinear effects in WEC modeling.~\cite{McConnell2025HybridMooring,McConnell2026HybridFramework} developed and experimentally evaluated real-time hybrid approaches for WEC mooring dynamics using Hinsdale Wave Research Laboratory and PTO bench experiments at WESURF. Additionally, the OSU–Sandia–Evergreen FOSTWIN~\cite{FOSTWINDigitalTwin} platform offers both a physics-based WEC-Sim model and a model identified from Hinsdale experimental data for controller development.~Collectively, these studies provide the data and methodologies to motivate the proposed integration of PacWAVE field wave conditions, tank-validated hydrodynamics and physical PTO testing within a reusable data-assimilation workflow.
+
+Outside the Pacific Marine Energy Center (PMEC), similar efforts are being made to develop digital twins for wave energy converters. At ocean scale,~\cite{Dizon2024FieldValidation} evaluated WEC-Sim and Gazebo models of the deployed MBARI two-body WEC against field measurements across 56 observations, comparing piston velocity, motor speed, and electrical power; the Gazebo model was intended to serve as a digital twin. Previous research provides complementary foundations for WEC digital twins through experimental model identification, field validation, and coupled PTO testing.~\cite{giorgi_identification_2019} used six experimental  datasets to identify and validate efficient linear and nonlinear hydrodynamic models, demonstrating how laboratory measurements can inform predictive models.~\cite{lawal_ai-driven_2026} discuss AI-driven digital twins for wave energy systems, while~\cite{katsidoniotaki_digital_2022} developed a CFD-derived surrogate for rapid prediction of extreme mooring loads. Related computational approaches include nonlinear response prediction using multiple-input operator networks by~\cite{zhang_multiple-input_2025}, CFD-coupled reinforcement learning for adaptive PTO control by~\cite{liang_environmental-sensing_2024}, and data-driven control methods reviewed by~\cite{pasta_towards_2023}. 
+For physical PTO testing,~\cite{Bracco2015ISWECHIL} coupled an ISWEC gyroscope and generator test rig with a numerical hydrodynamic model through hardware-in-the-loop simulation, while~\cite{Bacelli2019TankBench} demonstrated control testing through complementary dry-bench and wave-tank experiments. Together, these studies motivate a framework connecting measured ocean-wave conditions, tank-validated hydrodynamics, and physical PTO response. 
+
+The proposed project will build on these approaches by developing a reusable workflow that explicitly assimilates laboratory measurements to update model estimates and assess prediction uncertainty across the hydrodynamic and PTO testing stages.
+
+\section{Research Objectives and Expected Outcomes}
+\section{Research Approach: Connecting Field, Tank, and PTO Data}
+\section{Computational Readiness and Resource Requirements}
+\section{Work Plan, Milestones, and Validation}
+\section{Impact Readiness and Pathway to External Funding}
+
+\nocite{*}
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
